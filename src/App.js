@@ -1,11 +1,29 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-function App() {
+import { Container, HeaderTop } from './AppStyled';
+import HomePage from './pages/HomePage';
+import InfoPrice from './components/InfoPrice';
+
+const App = () => {
   return (
-    <div className="App">
+    <BrowserRouter>
+      <Container>
 
-    </div>
+        <HeaderTop>
+          <InfoPrice />
+        </HeaderTop>
+
+        <Switch>
+
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+
+        </Switch>
+
+      </Container>
+    </BrowserRouter>
   );
 }
 
